@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>阿岚的小站 · 记录与折腾</title>
+<meta name="description" content="一个从零搭起来的个人静态站点：写点东西，放点照片，留一个自己的地方。">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="阿岚的小站">
+<meta property="og:description" content="一个从零搭起来的个人静态站点。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html">阿岚<span class="brand-dot">.</span></a>
+  <nav class="nav" aria-label="主导航">
+    <a href="index.html" aria-current="page">首页</a>
+    <a href="posts/hello.html">文章</a>
+    <a href="about.html">关于</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <p class="eyebrow">Est. 2026 · 仍在折腾</p>
+    <h1>把想放的东西，<br>放到一个自己的地方。</h1>
+    <p class="lede">这是一个刚刚搭好的静态站点。没有后台、没有数据库，只有几个 HTML 文件和一个域名。你可以把这段文字换成任何想说的，把下面的列表换成任何想放的。</p>
+    <div class="actions">
+      <a class="btn" href="#posts">看看文章</a>
+      <a class="btn btn-ghost" href="about.html">关于我</a>
+    </div>
+  </section>
+
+  <section class="section" id="posts">
+    <div class="section-head">
+      <h2>最近写的</h2>
+      <span class="hint">2 篇</span>
+    </div>
+    <ul class="post-list">
+      <li>
+        <a class="post-item" href="posts/hello.html">
+          <time datetime="2026-11-07">2026-11-07</time>
+          <h3>第一篇文章：为什么我要有个自己的网站</h3>
+          <p>平台会消失，账号会被封，算法会改。但一个域名和一堆 HTML 文件，只要我不删，它就一直在。</p>
+        </a>
+      </li>
+      <li>
+        <a class="post-item" href="posts/how.html">
+          <time datetime="2026-11-01">2026-11-01</time>
+          <h3>这个站点是怎么搭起来的</h3>
+          <p>零框架、零构建、零月费：手写 HTML 和 CSS，推到 GitHub，用 Cloudflare Pages 托管。</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>这里能放什么</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>文字</h3>
+        <p>日记、笔记、读书摘录、长文。一个 HTML 文件就是一篇，复制一份就能加。</p>
+      </div>
+      <div class="card">
+        <h3>图片</h3>
+        <p>照片、画、截图。放进 <code>assets/</code>，用 <code>&lt;img&gt;</code> 引一下就行。</p>
+      </div>
+      <div class="card">
+        <h3>链接与作品</h3>
+        <p>做过的东西、常用工具、友链。想怎么排就怎么排，没有模板限制你。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 阿岚 · 用 HTML 手写</p>
+  <p class="footer-links"><a href="about.html">关于</a><a href="#main">回到顶部</a></p>
+</footer>
+</body>
+</html>

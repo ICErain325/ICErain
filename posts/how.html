@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这个站点是怎么搭起来的 · 阿岚的小站</title>
+<meta name="description" content="零框架、零构建、零月费：手写 HTML 和 CSS，推到 GitHub，用 Cloudflare Pages 托管。">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <a class="brand" href="../index.html">阿岚<span class="brand-dot">.</span></a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../index.html">首页</a>
+    <a href="../posts/hello.html" aria-current="page">文章</a>
+    <a href="../about.html">关于</a>
+  </nav>
+</header>
+
+<main id="main" class="narrow">
+  <article class="prose">
+    <a class="back" href="../index.html">← 返回首页</a>
+    <h1>这个站点是怎么搭起来的</h1>
+    <p class="post-meta"><time datetime="2026-11-01">2026-11-01</time> · 约 2 分钟</p>
+
+    <p>整个站点只有几样东西：HTML 文件、一个 CSS 文件、一个 SVG 图标。没有 <code>package.json</code>，没有构建命令，改完保存，刷新就能看到。</p>
+
+    <h2>结构</h2>
+    <pre><code>site/
+├── index.html          # 首页
+├── about.html          # 关于
+├── 404.html            # 找不到页面时的兜底
+├── favicon.svg         # 站点图标
+├── assets/
+│   └── style.css       # 全站样式
+└── posts/
+    ├── hello.html
+    └── how.html</code></pre>
+
+    <h2>为什么不用框架</h2>
+    <p>框架解决的是「内容多、要复用、要自动化」的问题。在只有几页的阶段，框架带来的配置成本比它省下的还多。等文章超过二三十篇、开始嫌复制粘贴烦了，再换 Hugo 或 Astro，把现有 HTML 迁过去也不难。</p>
+
+    <h2>部署</h2>
+    <p>把整个目录推到 GitHub，然后在 Cloudflare Pages 里连上这个仓库：构建命令留空，输出目录填 <code>/</code>，点一下 Deploy。之后每次 <code>git push</code>，它会自动重新发布，通常一两分钟上线。</p>
+    <p>成本是零。唯一的固定支出是域名，一年几十块。</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 阿岚 · 用 HTML 手写</p>
+  <p class="footer-links"><a href="../index.html">首页</a><a href="../about.html">关于</a></p>
+</footer>
+</body>
+</html>
