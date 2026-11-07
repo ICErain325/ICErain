@@ -104,6 +104,14 @@ img { max-width: 100%; display: block; }
   color: var(--ink-2);
 }
 
+.intro .note {
+  margin: 18px 0 0;
+  max-width: 36em;
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--ink-3);
+}
+
 /* ---------- 区块 ---------- */
 
 .section { padding: 44px 0; border-top: 1px solid var(--line); }
