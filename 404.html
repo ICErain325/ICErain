@@ -3,38 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>页面走丢了 · ICErain的小站</title>
+<title>页面走丢了 · ICErain</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#07080a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
 <header class="site-header">
-  <a class="brand" href="index.html">ICErain<span class="brand-dot">.</span></a>
-  <nav class="nav" aria-label="主导航">
-    <a href="index.html">首页</a>
-    <a href="posts/hello.html">文章</a>
-    <a href="about.html">关于</a>
-  </nav>
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 2 L30 16 L16 30 L2 16 Z" fill="none" stroke="#ff6a00" stroke-width="1.6"/>
+        <rect class="core" x="12" y="12" width="8" height="8" fill="#ece9e4" transform="rotate(45 16 16)"/>
+      </svg>
+      <span class="brand-text">ICErain<span class="brand-sub">Rhodes Island / Archive</span></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="index.html#about"><span class="num">01</span>档案</a>
+      <a href="index.html#posts"><span class="num">02</span>战报</a>
+      <a href="index.html#gallery"><span class="num">03</span>影像</a>
+      <a href="index.html#contact"><span class="num">04</span>联络</a>
+    </nav>
+    <span class="status"><i></i>Online</span>
+  </div>
 </header>
 
-<main id="main">
+<main class="wrap">
   <section class="notfound">
-    <p class="eyebrow">Error 404</p>
-    <h1>这页不存在。</h1>
-    <p class="lede">链接可能写错了，或者它已经被我删掉了。</p>
-    <div class="actions">
-      <a class="btn" href="index.html">回首页</a>
-      <a class="btn btn-ghost" href="posts/hello.html">看看文章</a>
-    </div>
+    <p class="eyebrow">Error // 404</p>
+    <p class="big">404</p>
+    <h1>信号丢失，档案不存在。</h1>
+    <p>链接可能写错了，或者这份记录已经被清除。</p>
+    <a class="btn" href="index.html">返回档案室 →</a>
   </section>
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 ICErain · AI主导制作</p>
-  <p class="footer-links"><a href="index.html">首页</a></p>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span>© 2026 ICErain</span>
+      <span>Terra / Rhodes Island</span>
+      <a href="index.html">首页 ↑</a>
+    </div>
+  </div>
 </footer>
+
 </body>
 </html>

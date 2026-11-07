@@ -1,13 +1,25 @@
-# 阿岚的小站
+# ICErain · 战术档案
 
-一个零依赖的静态站点：纯 HTML + CSS，没有构建步骤，没有框架，整个目录丢给任何静态托管都能跑。
+个人站点：游戏理解、版本更新记录、影像。
 
-- **线上地址**：<https://icerain325.com>（Cloudflare 备用地址：<https://icerain325.pages.dev>）
+- **线上地址**：<https://icerain325.com>（Cloudflare 备用：<https://icerain325.pages.dev>）
 - **源码仓库**：<https://github.com/ICErain325/ICErain>
 
-## 日常更新
+## 结构
 
-改完文件后，在 `site` 目录执行：
+```
+site/
+├── index.html          首页：档案 / 战报 / 影像 / 联络
+├── 404.html            找不到页面时的兜底
+├── favicon.svg         站点图标
+├── assets/
+│   └── style.css       全站样式（明日方舟 / 罗德岛风格）
+└── posts/
+    ├── 001.html        示例文章
+    └── 002.html        示例文章
+```
+
+## 日常更新
 
 ```powershell
 git add -A
@@ -15,66 +27,51 @@ git commit -m "更新内容"
 git push
 ```
 
-Cloudflare Pages 会自动重新构建，一两分钟后线上生效。构建配置固定为：Build command 留空、Build output directory `/`。
+推送后 Cloudflare Pages 自动构建，一两分钟生效。构建配置：Build command 留空、Build output directory `/`。
 
-> 注意：Cloudflare Pages 会开启 pretty URLs，`/about.html` 会被 308 跳到 `/about`，这是正常行为，链接不用改。
+> 如果 `git push` 卡住不动，Ctrl+C 再跑一次。
+
+## 加一篇文章
+
+1. 复制 `posts/001.html`，改名成 `posts/003.html`
+2. 改文件里的 `<title>`、`<h1>` 和正文（`<p>` 段落、`<h2>` 小标题）
+3. 打开 `index.html`，在「战报」区块里复制一个 `<a class="post">` 块，改标题、摘要、日期和链接
+
+## 换图片
+
+1. 把图片放进 `assets/img/`
+2. 在 `index.html` 的影像区块里，把
+
+```html
+<div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_01 // 待补充</span></div>
+```
+
+换成
+
+```html
+<figure class="tile">
+  <img src="assets/img/your-photo.jpg" alt="说明">
+</figure>
+```
+
+## 改社交链接
+
+`index.html` 底部「联络」区块里，把 `href="#"` 换成你的真实主页地址（B站、小红书等）。
+
+## 改主题色
+
+`assets/style.css` 顶部的 `--accent`，默认是 `#ff6a00`（罗德岛橙）。换成别的色值即可。
 
 ## 本地预览
 
-在 `site` 目录下执行：
+用 VS Code 的 Live Server（右键 `index.html` → Open with Live Server），或者：
 
 ```powershell
 python -m http.server 8080
 ```
 
-然后浏览器打开 <http://localhost:8080>。
+## 部署说明
 
-## 改成你自己的
-
-1. 全局搜索「阿岚」，换成你的名字（`index.html`、`about.html`、`posts/*.html` 和页脚都要改）。
-2. 改每个页面 `<head>` 里的 `<title>` 和 `<meta name="description">`。
-3. 配色在 `assets/style.css` 顶部的 `:root` 里，改 `--accent` 一个变量就能换主题色。
-4. 加文章：复制 `posts/hello.html` 改名，改标题和正文，再到 `index.html` 的文章列表里加一条 `<li>`。
-5. 头像是 `favicon.svg`，直接替换内容即可。
-
-## 部署到 Cloudflare Pages（免费）
-
-### 方式一：连 GitHub（推荐）
-
-之后每次 `git push` 都会自动重新发布。
-
-1. 在 GitHub 新建一个仓库，比如 `mysite`（不要勾选初始化 README）。
-2. 在 `site` 目录执行：
-
-```powershell
-git init
-git add .
-git commit -m "init site"
-git branch -M main
-git remote add origin https://github.com/<你的用户名>/mysite.git
-git push -u origin main
-```
-
-3. 打开 Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git，选这个仓库。
-4. 构建命令留空，输出目录填 `/`，点 Save and Deploy。
-5. 拿到一个 `xxx.pages.dev` 的免费地址。
-
-### 方式二：命令行直接上传（不用 GitHub）
-
-```powershell
-npx wrangler pages deploy . --project-name=mysite
-```
-
-## 绑定自己的域名
-
-1. 买域名（Cloudflare、阿里云、腾讯云都行）。
-2. Cloudflare Pages 项目 → Custom domains → 添加域名，按提示把 DNS 指过去。
-3. HTTPS 证书自动签发，不用手动配置。
-
-## 关于备案
-
-服务器在中国大陆才需要 ICP 备案。Cloudflare Pages 用的是海外节点，不需要备案，但国内访问速度因地区而异。如果要国内访问快，就得用国内云服务器 + 备案。
-
-## 换别的托管
-
-这里没有任何平台专属配置。同一个目录可以直接放 Vercel、Netlify、GitHub Pages，或者任意一台装了 nginx 的服务器。
+- 仓库连的是 Cloudflare Pages，`main` 分支即生产环境
+- 自定义域名 `icerain325.com` 已绑定，HTTPS 自动签发
+- 站点是纯静态文件，可以直接搬到 Vercel / Netlify / 任意服务器

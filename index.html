@@ -3,88 +3,222 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ICErain的小站</title>
-<meta name="description" content="一个从零搭起来的个人静态站点：写点东西，放点照片，留一个自己的地方。">
+<title>ICErain · 战术档案</title>
+<meta name="description" content="ICErain 的个人档案：游戏理解、版本更新记录与影像。一个又菜又爱玩的玩家写的东西。">
 <link rel="canonical" href="https://icerain325.com/">
 <meta property="og:url" content="https://icerain325.com/">
-<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ICErain的小站">
-<meta property="og:description" content="一个从零搭起来的个人静态站点。">
+<meta property="og:title" content="ICErain · 战术档案">
+<meta property="og:description" content="游戏理解、版本更新记录与影像。">
+<meta property="og:locale" content="zh_CN">
+<meta name="theme-color" content="#07080a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<a class="skip-link" href="#main">跳到正文</a>
+<body id="top">
 
 <header class="site-header">
-  <a class="brand" href="index.html">ICErain<span class="brand-dot">.</span></a>
-  <nav class="nav" aria-label="主导航">
-    <a href="index.html" aria-current="page">首页</a>
-    <a href="posts/hello.html">文章</a>
-    <a href="about.html">关于</a>
-  </nav>
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 2 L30 16 L16 30 L2 16 Z" fill="none" stroke="#ff6a00" stroke-width="1.6"/>
+        <rect class="core" x="12" y="12" width="8" height="8" fill="#ece9e4" transform="rotate(45 16 16)"/>
+      </svg>
+      <span class="brand-text">ICErain<span class="brand-sub">Rhodes Island / Archive</span></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#about"><span class="num">01</span>档案</a>
+      <a href="#posts"><span class="num">02</span>战报</a>
+      <a href="#gallery"><span class="num">03</span>影像</a>
+      <a href="#contact"><span class="num">04</span>联络</a>
+    </nav>
+    <span class="status"><i></i>Online</span>
+  </div>
 </header>
 
-<main id="main">
+<main>
+
+  <!-- ============ 首屏 ============ -->
   <section class="hero">
-    <p class="eyebrow">Est. 2026 · 仍在折腾</p>
-    <h1>把想放的东西，<br>放到一个自己的地方。</h1>
-    <p class="lede">这是一个刚刚搭好的静态站点。没有后台、没有数据库，只有几个 HTML 文件和一个域名。你可以把这段文字换成任何想说的，把下面的列表换成任何想放的。</p>
-    <div class="actions">
-      <a class="btn" href="#posts">看看文章</a>
-      <a class="btn btn-ghost" href="about.html">关于我</a>
+    <div class="wrap">
+      <div class="hero-watermark" aria-hidden="true">Rhodes Island</div>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">Rhodes Island // Operator Database</p>
+          <h1 class="hero-title">
+            <span class="ghost">Operator Profile</span>
+            ICErain
+          </h1>
+          <p class="hero-sub">又菜又爱玩的游戏玩家。写点对游戏机制的理解，记点版本更新的变化，剩下的时间用来打不过就抄作业。</p>
+          <div class="hero-meta">
+            <span>编号 <b>ICE-325</b></span>
+            <span>阵营 <b>罗德岛 · 外勤</b></span>
+            <span>职责 <b>战术记录</b></span>
+          </div>
+        </div>
+
+        <aside class="id-card" aria-label="干员档案">
+          <div class="id-head"><span>Operator File</span><b>No.325</b></div>
+          <div class="id-row"><span class="k">代号</span><span class="v">ICErain</span></div>
+          <div class="id-row"><span class="k">职介</span><span class="v">狙击 / 记录员</span></div>
+          <div class="id-row"><span class="k">所属</span><span class="v">罗德岛</span></div>
+          <div class="id-row"><span class="k">状态</span><span class="v">在岗</span></div>
+
+          <div class="stat">
+            <div class="stat-top"><span>游戏理解</span><b>72%</b></div>
+            <div class="bar"><i style="width:72%"></i></div>
+          </div>
+          <div class="stat">
+            <div class="stat-top"><span>手速</span><b>38%</b></div>
+            <div class="bar"><i style="width:38%"></i></div>
+          </div>
+          <div class="stat">
+            <div class="stat-top"><span>抄作业依赖</span><b>91%</b></div>
+            <div class="bar"><i style="width:91%"></i></div>
+          </div>
+          <div class="stat">
+            <div class="stat-top"><span>睡眠时长</span><b>12%</b></div>
+            <div class="bar"><i style="width:12%"></i></div>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
+  <div class="hazard" aria-hidden="true"></div>
+
+  <!-- ============ 档案 ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">作战档案</h2>
+        <span class="section-line"></span>
+        <span class="section-sub">About</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>我是 <strong>ICErain</strong>。白天上班，晚上打游戏，顺手把想明白的东西写下来。</p>
+          <p>这里不追热点，也不做攻略搬运。写的是我自己对机制的理解、对版本更新的看法，以及那些打完之后才想通的地方——比如为什么某个干员突然好用，为什么某个活动看着难其实有解。</p>
+          <p>水平有限，结论经常被打脸。但记录本身有价值：过几个版本回头看，能看出自己当时错在哪。</p>
+        </div>
+
+        <ul class="facts">
+          <li><span class="k">入坑时间</span><span class="v">2023</span></li>
+          <li><span class="k">主要作业</span><span class="v">机制拆解</span></li>
+          <li><span class="k">更新频率</span><span class="v">看心情</span></li>
+          <li><span class="k">当前状态</span><span class="v">又菜又爱玩</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 战报 ============ -->
   <section class="section" id="posts">
-    <div class="section-head">
-      <h2>最近写的</h2>
-      <span class="hint">2 篇</span>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">战报</h2>
+        <span class="section-line"></span>
+        <span class="section-sub">Log / 02 Entries</span>
+      </div>
+
+      <div class="posts">
+        <a class="post" href="posts/001.html">
+          <span class="post-idx">001</span>
+          <div>
+            <h3>干员强度榜为什么永远吵不完</h3>
+            <p>强度不是单一数值，而是「数据 × 环境 × 操作」。这三样里有两样会变，所以榜单注定没有最终答案。</p>
+          </div>
+          <div class="post-meta">
+            2026-11-07
+            <span class="tag">理解</span>
+          </div>
+        </a>
+
+        <a class="post" href="posts/002.html">
+          <span class="post-idx">002</span>
+          <div>
+            <h3>新版本先看规则，再看数值</h3>
+            <p>每次更新我都按这个顺序读：规则文本 → 数值改动 → 实战验证。跳过第一步，后面全是白费功夫。</p>
+          </div>
+          <div class="post-meta">
+            2026-11-01
+            <span class="tag">更新</span>
+          </div>
+        </a>
+      </div>
     </div>
-    <ul class="post-list">
-      <li>
-        <a class="post-item" href="posts/hello.html">
-          <time datetime="2026-11-07">2026-11-07</time>
-          <h3>第一篇文章：为什么我要有个自己的网站</h3>
-          <p>平台会消失，账号会被封，算法会改。但一个域名和一堆 HTML 文件，只要我不删，它就一直在。</p>
-        </a>
-      </li>
-      <li>
-        <a class="post-item" href="posts/how.html">
-          <time datetime="2026-11-01">2026-11-01</time>
-          <h3>这个站点是怎么搭起来的</h3>
-          <p>零框架、零构建、零月费：手写 HTML 和 CSS，推到 GitHub，用 Cloudflare Pages 托管。</p>
-        </a>
-      </li>
-    </ul>
   </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>这里能放什么</h2>
+  <!-- ============ 影像 ============ -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">影像</h2>
+        <span class="section-line"></span>
+        <span class="section-sub">Visual Record</span>
+      </div>
+
+      <div class="gallery">
+        <div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_01 // 待补充</span></div>
+        <div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_02 // 待补充</span></div>
+        <div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_03 // 待补充</span></div>
+        <div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_04 // 待补充</span></div>
+        <div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_05 // 待补充</span></div>
+        <div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_06 // 待补充</span></div>
+      </div>
+      <p class="gallery-note">// 截图、战报、线下照片都可以放这里。把图片丢进 assets/img/，再把上面的方块换成 &lt;img&gt; 即可。</p>
     </div>
-    <div class="cards">
-      <div class="card">
-        <h3>文字</h3>
-        <p>日记、笔记、读书摘录、长文。一个 HTML 文件就是一篇，复制一份就能加。</p>
+  </section>
+
+  <!-- ============ 联络 ============ -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">联络</h2>
+        <span class="section-line"></span>
+        <span class="section-sub">Channel</span>
       </div>
-      <div class="card">
-        <h3>图片</h3>
-        <p>照片、画、截图。放进 <code>assets/</code>，用 <code>&lt;img&gt;</code> 引一下就行。</p>
-      </div>
-      <div class="card">
-        <h3>链接与作品</h3>
-        <p>做过的东西、常用工具、友链。想怎么排就怎么排，没有模板限制你。</p>
+
+      <div class="links">
+        <a class="link" href="https://github.com/ICErain325" target="_blank" rel="noopener">
+          <span class="link-name">GitHub<small>code / archive</small></span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <!-- 换成你的 B 站主页地址 -->
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="link-name">哔哩哔哩<small>bilibili</small></span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <!-- 换成你的小红书主页地址 -->
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="link-name">小红书<small>rednote</small></span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a class="link" href="mailto:hello@example.com">
+          <span class="link-name">邮箱<small>mail</small></span>
+          <span class="link-arrow">↗</span>
+        </a>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 ICErain · AI主导制作</p>
-  <p class="footer-links"><a href="about.html">关于</a><a href="#main">回到顶部</a></p>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span>© 2026 ICErain</span>
+      <span>Terra / Rhodes Island</span>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+    <p class="disclaimer">本站为个人同人性质的记录站点，与鹰角网络及《明日方舟》官方无关。</p>
+  </div>
 </footer>
+
 </body>
 </html>
