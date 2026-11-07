@@ -2,7 +2,7 @@
 
 一个零依赖的静态站点：纯 HTML + CSS，没有构建步骤，没有框架，整个目录丢给任何静态托管都能跑。
 
-- **线上地址**：<https://icerain-2cf.pages.dev>
+- **线上地址**：<https://icerain325.pages.dev>
 - **源码仓库**：<https://github.com/ICErain325/ICErain>
 
 ## 日常更新
