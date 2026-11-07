@@ -613,6 +613,21 @@ a:hover { color: #ff8a33; }
 }
 .link:hover .link-arrow { color: #0a0a0a; }
 
+/* 纯展示、不可点击的联系方式 */
+.link-static {
+  grid-column: 1 / -1;
+  cursor: default;
+}
+.link-static:hover { background: transparent; color: var(--ink); }
+
+.link-value {
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  user-select: all;
+}
+
 /* ---------- 页脚 ---------- */
 
 .site-footer {
