@@ -1,6 +1,6 @@
-# ICErain · 战术档案
+# ICErain
 
-个人站点：游戏理解、版本更新记录、影像。
+个人主页：游戏理解、版本记录、照片。
 
 - **线上地址**：<https://icerain325.com>（Cloudflare 备用：<https://icerain325.pages.dev>）
 - **源码仓库**：<https://github.com/ICErain325/ICErain>
@@ -9,14 +9,14 @@
 
 ```
 site/
-├── index.html          首页：档案 / 战报 / 影像 / 联络
-├── 404.html            找不到页面时的兜底
-├── favicon.svg         站点图标
+├── index.html          首页：关于 / 文章 / 照片 / 联系
+├── 404.html
+├── favicon.svg
 ├── assets/
-│   └── style.css       全站样式（明日方舟 / 罗德岛风格）
+│   └── style.css       全站样式
 └── posts/
-    ├── 001.html        示例文章
-    └── 002.html        示例文章
+    ├── 001.html
+    └── 002.html
 ```
 
 ## 日常更新
@@ -27,51 +27,54 @@ git commit -m "更新内容"
 git push
 ```
 
-推送后 Cloudflare Pages 自动构建，一两分钟生效。构建配置：Build command 留空、Build output directory `/`。
+推送后 Cloudflare Pages 自动构建，一两分钟生效。
 
-> 如果 `git push` 卡住不动，Ctrl+C 再跑一次。
+> 推送依赖代理。如果 `git push` 卡住，先确认代理开着，再重跑一次。
 
 ## 加一篇文章
 
 1. 复制 `posts/001.html`，改名成 `posts/003.html`
-2. 改文件里的 `<title>`、`<h1>` 和正文（`<p>` 段落、`<h2>` 小标题）
-3. 打开 `index.html`，在「战报」区块里复制一个 `<a class="post">` 块，改标题、摘要、日期和链接
+2. 改 `<title>`、`<h1>`、`.meta` 里的日期，以及正文
+3. 打开 `index.html`，在「文章」列表里复制一条 `<li>`，改日期和链接
 
-## 换图片
+## 加照片
 
-1. 把图片放进 `assets/img/`
-2. 在 `index.html` 的影像区块里，把
-
-```html
-<div class="tile"><span class="tile-tag">Img</span><span class="tile-label">IMG_01 // 待补充</span></div>
-```
-
-换成
+1. 图片放进 `assets/img/`
+2. 把首页里「照片」那段文字替换成：
 
 ```html
-<figure class="tile">
-  <img src="assets/img/your-photo.jpg" alt="说明">
-</figure>
+<div class="photos">
+  <img src="assets/img/photo-01.jpg" alt="说明">
+  <img src="assets/img/photo-02.jpg" alt="说明">
+</div>
 ```
 
-## 改社交链接
-
-`index.html` 底部「联络」区块里，把 `href="#"` 换成你的真实主页地址（B站、小红书等）。
+照片会自动排成两列（手机上单列）。
 
 ## 改主题色
 
-`assets/style.css` 顶部的 `--accent`，默认是 `#ff6a00`（罗德岛橙）。换成别的色值即可。
+`assets/style.css` 顶部：
+
+```css
+--accent: #b45309;   /* 现在是一个偏棕的橙 */
+```
 
 ## 本地预览
 
-用 VS Code 的 Live Server（右键 `index.html` → Open with Live Server），或者：
+VS Code 装 Live Server 后，右键 `index.html` → Open with Live Server。
+或者：
 
 ```powershell
 python -m http.server 8080
 ```
 
-## 部署说明
+## 缓存说明
 
-- 仓库连的是 Cloudflare Pages，`main` 分支即生产环境
+样式文件带版本号（`style.css?v=5`）。**改完 CSS 要把 HTML 里的版本号 +1**，否则浏览器可能继续用旧样式。
+
+## 部署
+
+- Cloudflare Pages，`main` 分支即生产环境
+- Build command 留空，Output directory `/`
 - 自定义域名 `icerain325.com` 已绑定，HTTPS 自动签发
-- 站点是纯静态文件，可以直接搬到 Vercel / Netlify / 任意服务器
+- 纯静态文件，可以直接搬到 Vercel / Netlify / 任意服务器
