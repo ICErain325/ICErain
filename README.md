@@ -2,6 +2,23 @@
 
 一个零依赖的静态站点：纯 HTML + CSS，没有构建步骤，没有框架，整个目录丢给任何静态托管都能跑。
 
+- **线上地址**：<https://icerain-2cf.pages.dev>
+- **源码仓库**：<https://github.com/ICErain325/ICErain>
+
+## 日常更新
+
+改完文件后，在 `site` 目录执行：
+
+```powershell
+git add -A
+git commit -m "更新内容"
+git push
+```
+
+Cloudflare Pages 会自动重新构建，一两分钟后线上生效。构建配置固定为：Build command 留空、Build output directory `/`。
+
+> 注意：Cloudflare Pages 会开启 pretty URLs，`/about.html` 会被 308 跳到 `/about`，这是正常行为，链接不用改。
+
 ## 本地预览
 
 在 `site` 目录下执行：
