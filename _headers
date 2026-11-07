@@ -1,0 +1,11 @@
+# Cloudflare Pages 响应头配置
+# 文档：https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 静态资源带版本号（style.css?v=3），可以长期缓存
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
