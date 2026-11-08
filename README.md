@@ -14,9 +14,7 @@ site/
 ├── favicon.svg
 ├── assets/
 │   └── style.css       全站样式
-└── posts/
-    ├── 001.html
-    └── 002.html
+└── posts/              文章页（暂时为空）
 ```
 
 ## 日常更新
@@ -33,9 +31,25 @@ git push
 
 ## 加一篇文章
 
-1. 复制 `posts/001.html`，改名成 `posts/003.html`
-2. 改 `<title>`、`<h1>`、`.meta` 里的日期，以及正文
-3. 打开 `index.html`，在「文章」列表里复制一条 `<li>`，改日期和链接
+文章列表现在是空的，加的时候分两步：
+
+1. 新建 `posts/001.html`（告诉我内容，我可以直接生成）
+2. 在 `index.html` 的「文章」区块里，把
+
+```html
+<p>还没写。以后会放一些自己写的东西。</p>
+```
+
+换成：
+
+```html
+<ul class="list">
+  <li>
+    <span class="date">2026-11-08</span>
+    <a href="posts/001.html">文章标题</a>
+  </li>
+</ul>
+```
 
 ## 加照片
 
@@ -70,7 +84,7 @@ python -m http.server 8080
 
 ## 缓存说明
 
-样式文件带版本号（`style.css?v=5`）。**改完 CSS 要把 HTML 里的版本号 +1**，否则浏览器可能继续用旧样式。
+样式文件带版本号（`style.css?v=6`）。**改完 CSS 要把 HTML 里的版本号 +1**，否则浏览器可能继续用旧样式。
 
 ## 部署
 
