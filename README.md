@@ -1,6 +1,6 @@
-# ICErain
+# ICErain 的博客
 
-个人主页：游戏理解、版本记录、照片。
+个人博客：游戏、工具、随手记录。
 
 - **线上地址**：<https://icerain325.com>（Cloudflare 备用：<https://icerain325.pages.dev>）
 - **源码仓库**：<https://github.com/ICErain325/ICErain>
